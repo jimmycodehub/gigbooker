@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Railsproject</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+				<%= "GIG BOOKER"%>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+					<li><%= link_to "About", "#" %></li>
+					<li><%= link_to "Gig Giude", 'http://www.dublinconcerts.ie/upcoming-gigs/'%></li>
+					<li><%= mail_to "c13707355@mydit.ie", "Contact Us"%></li>
+					<li><%= link_to "Artists", artists_path %></li>
+					<li><%= link_to "Venues", venues_path %></li>
+					<li><%= link_to "Events", events_path %></li>
+					<li><%= image_tag("gig.jpg", :size => "500x100")%></li>
+				</ul>		
+	
+			</div>
+			</nav>
+			<br><br><br><br><br><br>
+			<div class="container">
+			<div id=row>
+				<div class="col-md-9">
+					<hr>
+					<%=yield%>
+				</div>
+				</div>
+			</div>
+    <!-- /.container -->
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
