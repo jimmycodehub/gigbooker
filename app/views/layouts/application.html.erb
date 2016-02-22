@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Railsproject</title>
+  <title>GigsBooker</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background:#FAAC58" >
+    <div class="container" >
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-				<%= "GIG BOOKER"%>
+            <div class="navbar-header" >
+				
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-					<li><%= link_to "About", "#" %></li>
-					<li><%= link_to "Gig Giude", 'http://www.dublinconcerts.ie/upcoming-gigs/'%></li>
-					<li><%= mail_to "c13707355@mydit.ie", "Contact Us"%></li>
+				<a class="navbar-brand" href="#">GigBooker</a>
+					<li><%= link_to "Home", root_path %></li>
+					<li><%= link_to "Gig Giude", 'http://www.dublinconcerts.ie/upcoming-gigs/' %></li>
 					<li><%= link_to "Artists", artists_path %></li>
 					<li><%= link_to "Venues", venues_path %></li>
 					<li><%= link_to "Events", events_path %></li>
-					<li><%= image_tag("gig.jpg", :size => "500x100")%></li>
+					<li><%= link_to "Users", users_path %></li>
+					<li><%= link_to "Bookings", bookings_path %></li>
 				</ul>		
 	
 			</div>
 			</nav>
-			<br><br><br><br><br><br>
+			<div>
+			<br>
 			<div class="container">
+			
 			<div id=row>
-				<div class="col-md-9">
-					<hr>
+			
+				<div id="centre" class="modal-footer col-md-9" >
+				
+					
 					<%=yield%>
 				</div>
 				</div>
 			</div>
+			
+	 <div class="navbar navbar-default navbar-fixed-bottom" style="background:#FAAC58">
+    <div class="container">
+      <p class="navbar-text pull-left">© 2016 - Site Built By Mr.James McGovern
+      </p>
+      
+      <a href="https://github.com/jimmycodehub" style="color:white" class=" navbar-btn btn-success btn-github btn pull-right ">
+        GitHub</a>
+    </div>
+    
+    
+  </div>
+
     <!-- /.container -->
 
 
@@ -41,8 +59,7 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    
 
 </body>
 </html>

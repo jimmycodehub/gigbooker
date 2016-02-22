@@ -2,12 +2,12 @@
 
 <p>
   <strong>Venue:</strong>
-  <%= @event.venue_id %>
+  <%= @event.venue.name %>
 </p>
 
 <p>
   <strong>Artist:</strong>
-  <%= @event.artist_id %>
+  <%= @event.artist.name %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

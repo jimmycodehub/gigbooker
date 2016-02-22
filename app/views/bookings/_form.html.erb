@@ -13,21 +13,18 @@
 
   <div class="field">
     <%= f.label :date_time %><br>
-    <%= f.datetime_select :date_time %>
+    <%= f.datetime_local_field :date_time, :default => Time.now.year %>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
+  
   <div class="field">
     <%= f.label :ticket_type %><br>
-    <%= f.text_field :ticket_type %>
+    <%= f.select :ticket_type, options_for_select([["Seating"], ["Standing"], ["V.I.P."]]) %>
   </div>
   <div class="field">
     <%= f.label :ticket_amount %><br>
     <%= f.number_field :ticket_amount %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Purchase', data: { confirm: 'Are you sure?'} %>
   </div>
 <% end %>
