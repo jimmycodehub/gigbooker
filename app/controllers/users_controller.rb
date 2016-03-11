@@ -21,11 +21,12 @@ class UsersController < ApplicationController
   def edit
   end
 
+  
+
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save                #saves the object/record to the database table.
 		Usermailer.welcome(@user).deliver_now
@@ -70,6 +71,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:title, :first_name, :last_name, :email, :dob, :credit_card, :password)
+      params.require(:user).permit(:title, :first_name, :last_name, :email, :dob, :credit_card, :password, :image)
     end
 end

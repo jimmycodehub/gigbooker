@@ -20,5 +20,9 @@
   <%= @venue.parking %>
 </p>
 
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@venue.latitude}%2C#{@venue.longitude}" %>
+
+
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
 <%= link_to 'Back', venues_path %>

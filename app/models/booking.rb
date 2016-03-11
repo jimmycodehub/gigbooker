@@ -1,4 +1,5 @@
 class Booking < ActiveRecord::Base
-	has_many :events, dependent: :destroy
-	has_many :users, dependent: :destroy
+	
+	belongs_to :user
+	belongs_to :event
 end

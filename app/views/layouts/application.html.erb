@@ -14,6 +14,21 @@
 				
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+				<% if !logged_in? %>
+						<button type="button" class="btn btn-success"><%= link_to "Log In", login_path%></button>
+					<% else %>
+						Signed in as <%= @current_user.first_name %>
+						
+						
+						
+						<%if @current_user.image.empty?%>
+							<%= image_tag("avatar.jpg", :alt=> "No Picture", :class=> "uImage")%>
+						<%else%>
+							<%= image_tag(@current_user.image, :class=>"uImage") %>
+						<%end%>
+						
+						<button type="button" class="btn btn-success"><%= link_to "Sign Out", logout_path %></button>
+					<% end %>
 				<a class="navbar-brand" href="#">GigBooker</a>
 					<li><%= link_to "Home", root_path %></li>
 					<li><%= link_to "Gig Giude", 'http://www.dublinconcerts.ie/upcoming-gigs/' %></li>
@@ -22,7 +37,12 @@
 					<li><%= link_to "Events", events_path %></li>
 					<li><%= link_to "Users", users_path %></li>
 					<li><%= link_to "Bookings", bookings_path %></li>
-				</ul>		
+				</ul>
+				
+					
+					
+	
+	
 	
 			</div>
 			</nav>
@@ -36,8 +56,13 @@
 				
 					
 					<%=yield%>
+					
+					
+			
 				</div>
+				
 				</div>
+				
 			</div>
 			
 	 <div class="navbar navbar-default navbar-fixed-bottom" style="background:#FAAC58">

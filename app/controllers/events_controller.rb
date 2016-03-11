@@ -8,6 +8,16 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def search
+		@events =Event.search params[:query]
+		unless @events.empty?    #if !@events.empty?
+			render 'index'       #will only show records matching the search
+		else
+			flash[:notice]= 'No record matches that search'
+			render 'index'        #will show all records
+		end
+   end
+  
   # GET /events/1
   # GET /events/1.json
   def show
@@ -70,6 +80,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:venue_id, :artist_id)
+      params.require(:event).permit(:venue_id, :artist_id, :date_time)
     end
 end

@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   
   
+  
+  
+  
 	def authorise
 		unless logged_in?
 			store_location

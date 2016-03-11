@@ -19,6 +19,13 @@
     <%= f.label :artist_id %><br>
     <%= f.collection_select:artist_id,Artist.all, :id, :name %>
   </div>
+  
+  <div class="field">
+    <%= f.label :date_time %><br>
+    <%= f.datetime_local_field :date_time, :default => Time.now.year %>
+  </div>
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>

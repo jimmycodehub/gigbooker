@@ -15,5 +15,29 @@
   <%= @booking.ticket_amount %>
 </p>
 
+<p>
+  <strong>Event id:</strong>
+  <%= @booking.event_id %>
+</p>
+
+<p>
+  <strong>Event Venue:</strong>
+  <%= @booking.event.venue.name%>
+</p>
+
+<p>
+  <strong>Event Artist:</strong>
+  <%= @booking.event.artist.name%>
+</p>
+
+<p>
+  <strong>User Id:</strong>
+  <%= @booking.user_id%>
+</p>
+
+
+
+
+
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
 <%= link_to 'Back', bookings_path %>

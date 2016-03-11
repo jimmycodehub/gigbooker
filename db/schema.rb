@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221181220) do
+ActiveRecord::Schema.define(version: 20160311092224) do
 
-  create_table "artists", force: true do |t|
-    t.string   "name"
-    t.string   "genre"
+  create_table "artists", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "genre",      limit: 255
     t.text     "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "bookings", force: true do |t|
+  create_table "bookings", force: :cascade do |t|
     t.datetime "date_time"
-    t.string   "ticket_type"
+    t.string   "ticket_type",   limit: 255
     t.integer  "ticket_amount"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,32 +31,36 @@ ActiveRecord::Schema.define(version: 20160221181220) do
     t.integer  "event_id"
   end
 
-  create_table "events", force: true do |t|
+  create_table "events", force: :cascade do |t|
     t.integer  "venue_id"
     t.integer  "artist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "date_time"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "title"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
+  create_table "users", force: :cascade do |t|
+    t.string   "title",           limit: 255
+    t.string   "first_name",      limit: 255
+    t.string   "last_name",       limit: 255
+    t.string   "email",           limit: 255
     t.date     "dob"
     t.integer  "credit_card"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
+    t.string   "password_digest", limit: 255
+    t.text     "image"
   end
 
-  create_table "venues", force: true do |t|
-    t.string   "name"
-    t.string   "location"
+  create_table "venues", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "location",   limit: 255
     t.integer  "capacity"
     t.boolean  "parking"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end

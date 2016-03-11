@@ -10,11 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :date_time %><br>
-    <%= f.datetime_local_field :date_time, :default => Time.now.year %>
-  </div>
   
   <div class="field">
     <%= f.label :ticket_type %><br>
@@ -24,6 +19,15 @@
     <%= f.label :ticket_amount %><br>
     <%= f.number_field :ticket_amount %>
   </div>
+  
+  <div class="field">
+    <%= f.label :event_id %><br>
+    <%= f.collection_select:event_id,Event.all, :id, :id_with_venue %>
+  </div>
+  
+  
+  
+  
   <div class="actions">
     <%= f.submit 'Purchase', data: { confirm: 'Are you sure?'} %>
   </div>

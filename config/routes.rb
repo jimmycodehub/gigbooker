@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'search' => 'events#search'
+  
   get 'pages/home'
 
   get 'pages/about'
